@@ -14,10 +14,19 @@ namespace Zadanie1
             IDocument doc2;
             xerox.Scan(out doc2);
 
+            
+            xerox.PowerOn();
             xerox.ScanAndPrint();
-            System.Console.WriteLine(xerox.Counter);
-            System.Console.WriteLine(xerox.PrintCounter);
-            System.Console.WriteLine(xerox.ScanCounter);
+            Console.WriteLine();
+            Console.WriteLine($"Counter: {xerox.Counter}");
+            Console.WriteLine($"Print counter: {xerox.PrintCounter}");
+            Console.WriteLine($"Scan counter: {xerox.ScanCounter}");
+
+            Console.WriteLine();
+            xerox.PowerOff();
+            xerox.Print(doc1);
+            xerox.Scan(out doc1);
+            Console.WriteLine("Nothing happens when off!");
         }
     }
 }
